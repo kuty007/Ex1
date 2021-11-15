@@ -4,7 +4,7 @@ import math
 
 class Elevators:
     def __init__(self, id, speed, min_floor, max_floor, close_time, open_time, start_time, stop_time,
-                 calls_for_elv, time_busy):
+                 calls_for_elv, time_busy, position=0):
         self.id = id
         self.speed = speed
         self.min_floor = min_floor
@@ -15,6 +15,7 @@ class Elevators:
         self.stop_time = stop_time
         self.calls_for_elv = calls_for_elv
         self.time_busy = time_busy
+        self.position = position
 
     def __repr__(self) -> str:
         return f"repr _id:{self.id} speed:{self.speed} min_floor:{self.min_floor} " \

@@ -19,6 +19,9 @@ def time_for_call(elv=Elevators, call=Callas):
     return time_to_complete
 
 
+# def get_postion(elv = Elevators ,call=Callas):
+
+
 def unbusy_elv(building=Building, call=Callas):
     el = building.elvators
     elv_id = -1
@@ -33,7 +36,7 @@ def unbusy_elv(building=Building, call=Callas):
 
 
 def add_time_busy(elv=Elevators, call=Callas):
-    elv.time_busy.append(time_for_call(elv, call) + float((call.time)))
+    elv.time_busy.append(time_for_call(elv, call) + float(call.time))
 
 
 def delete_busy(bui=Building, call=Callas):
@@ -66,9 +69,23 @@ def allocate(build=Building, call=Callas):
     return chosen_elv
 
 
-x = load_csv_calls("Calls_b.csv")
-b = Building(0, 8)
-b.load_json_build("B4.json")
-for i in x:
-    allocate(b, i)
-    print(i)
+def output(file_build, file_calls, file_update_calls):
+    b = Building(0, 0)
+    b.load_json_build(file_build)
+    list_calls = load_csv_calls(file_calls)
+    update_calls = []
+    for i in list_calls:
+        allocate(b, i)
+        update_calls.append(i.__dict__.values())
+    with open(file_update_calls, 'w', newline="") as f:
+        csw = csv.writer(f)
+        csw.writerows(update_calls)
+    return file_update_calls
+
+
+def fill_res(output, num, row):
+    my = pd.read_csv(output, header=None)
+    my.loc[row][5] = num
+
+
+output("B4.json", "Calls_c.csv", "Calls_b.csv")
