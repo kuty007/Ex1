@@ -1,9 +1,5 @@
-import sys
-
 from building import *
 from elavator import *
-import json
-import math
 from calls import *
 
 
@@ -17,9 +13,6 @@ def time_for_call(elv=Elevators, call=Callas):
     dst = int(call.dst_floor)
     time_to_complete = (abs(src - dst) / speed) + (2 * (open + close) + (start + stop))
     return time_to_complete
-
-
-# def get_postion(elv = Elevators ,call=Callas):
 
 
 def unbusy_elv(building=Building, call=Callas):
@@ -81,11 +74,8 @@ def output(file_build, file_calls, file_update_calls):
         csw = csv.writer(f)
         csw.writerows(update_calls)
     return file_update_calls
+def postion (elv = Elevators ,call ):
+    
 
 
-def fill_res(output, num, row):
-    my = pd.read_csv(output, header=None)
-    my.loc[row][5] = num
-
-
-output("B4.json", "Calls_c.csv", "Calls_b.csv")
+output("B4.json", "Calls_c.csv", "output.csv")
