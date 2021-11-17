@@ -44,11 +44,6 @@ def delete_busy(bui=Building, call=Callas):
                     q.time_busy.pop(q.time_busy.index(busy))
 
 
-def busy_load(elv=Elevators):
-    if len(elv.time_busy) == 5:
-        return True
-
-
 def allocate(build=Building, call=Callas):
     chosen_elv = -1
     min_time = 9223372036854775807
@@ -67,7 +62,7 @@ def allocate(build=Building, call=Callas):
                 chosen_elv = r
         call.elv_id = chosen_elv
         build.elvators[chosen_elv].calls_for_elv.append(call)
-        add_time_busy(build.elvators[chosen_elv], call, 0)
+        add_time_busy(build.elvators[chosen_elv], call,  min_time)
     return chosen_elv
 
 
@@ -88,4 +83,4 @@ def output(file_build, file_calls, file_update_calls):
 # def postion (elv = Elevators ,call):
 
 
-output("B2.json", "Calls_b.csv", "output.csv")
+output("B1.json", "Calls_a.csv", "output.csv")
