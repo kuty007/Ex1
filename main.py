@@ -4,6 +4,10 @@ from calls import *
 
 
 def time_for_call(elv=Elevators, call=Callas):
+    if len(elv.calls_for_elv) < 1:
+        dis_from_call = abs(0 - call.src_floor)
+    else:
+        dis_from_call = abs(elv.calls_for_elv[-1].dst_floor - call.src_floor)
     speed = float(elv.speed)
     open = float(elv.open_time)
     close = float(elv.close_time)
@@ -11,7 +15,7 @@ def time_for_call(elv=Elevators, call=Callas):
     stop = float(elv.stop_time)
     src = int(call.src_floor)
     dst = int(call.dst_floor)
-    time_to_complete = (abs(src - dst) / speed) + (2 * (open + close) + (start + stop))
+    time_to_complete = ((abs(src - dst)) + dis_from_call) / speed + (2 * (open + close) + (start + stop))
     return time_to_complete
 
 
@@ -28,8 +32,8 @@ def unbusy_elv(building=Building, call=Callas):
     return elv_id
 
 
-def add_time_busy(elv=Elevators, call=Callas):
-    elv.time_busy.append(time_for_call(elv, call) + float(call.time))
+def add_time_busy(elv=Elevators, call=Callas, time_dif=None):
+    elv.time_busy.append(time_for_call(elv, call) + float(call.time) + time_dif)
 
 
 def delete_busy(bui=Building, call=Callas):
@@ -40,6 +44,11 @@ def delete_busy(bui=Building, call=Callas):
                     q.time_busy.pop(q.time_busy.index(busy))
 
 
+def busy_load(elv=Elevators):
+    if len(elv.time_busy) == 5:
+        return True
+
+
 def allocate(build=Building, call=Callas):
     chosen_elv = -1
     min_time = 9223372036854775807
@@ -48,7 +57,7 @@ def allocate(build=Building, call=Callas):
     if free_elev != -1:
         call.elv_id = free_elev
         build.elvators[free_elev].calls_for_elv.append(call)
-        add_time_busy(build.elvators[free_elev], call)
+        add_time_busy(build.elvators[free_elev], call, 0)
         return free_elev
     else:
         for r in range(len(build.elvators)):
@@ -58,7 +67,7 @@ def allocate(build=Building, call=Callas):
                 chosen_elv = r
         call.elv_id = chosen_elv
         build.elvators[chosen_elv].calls_for_elv.append(call)
-        add_time_busy(build.elvators[chosen_elv], call)
+        add_time_busy(build.elvators[chosen_elv], call, 0)
     return chosen_elv
 
 
@@ -74,8 +83,9 @@ def output(file_build, file_calls, file_update_calls):
         csw = csv.writer(f)
         csw.writerows(update_calls)
     return file_update_calls
-def postion (elv = Elevators ,call ):
-    
 
 
-output("B4.json", "Calls_c.csv", "output.csv")
+# def postion (elv = Elevators ,call):
+
+
+output("B2.json", "Calls_b.csv", "output.csv")
