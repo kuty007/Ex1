@@ -90,6 +90,11 @@ and take consider of the elevator attributes
 - delete_busy:
 check if the new call time is bigger from the values of busy time for each elevator and if so delete them
 
+## UML
+
+![image](https://user-images.githubusercontent.com/93159965/142508974-04daff6d-df55-47a3-a2b2-6d342c1b7721.png)
+
+
 
 
 
