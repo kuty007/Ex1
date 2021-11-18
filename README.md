@@ -1,9 +1,12 @@
-# Ex1                                    
+# Ex1     
+![Add a heading](https://user-images.githubusercontent.com/93159965/142401078-a0e123fc-2079-425a-9c84-d065401279c1.png)
+                           
 # ID: 206316895,318786506
 ## Description:
 
 When we come to analyze the problem of the optimal way to use an elevator in a building- we’re having  problems, for example:
   Are all the calls known to us in advance or do we receive a live stream of calls (offline VS online)?
+ 
   
 How to allocate our elevators the best? Should each elevator be limited with specific  range of floors that it handles or can each elevator respond to calls from all floors?
 
@@ -22,11 +25,11 @@ Article number 2. deals with the algorithm in a rather simplistic way and deals 
  The video (source number 4) shows this out and presents a problem similar to what there is in the task- of having different types of buildings and elevators.
  
 Article number 3. is actually a comparison between the five known elevator algorithms before the 2000’s:
-a. MRF-Maimum  Request First
-b. FRF- First Request First
-c. RAND-Random
-d. CIRC -Cicular
-e. SDF - Shortesst Destination First
+- MRF-Maimum  Request First
+- FRF- First Request First
+- RAND-Random
+- CIRC -Cicular
+- SDF - Shortesst Destination First
 
 The comparison between these five helps to understand the importance of logic and planning before approaching the realization of projects of this magnitude.
 
