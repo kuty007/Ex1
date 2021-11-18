@@ -50,6 +50,46 @@ The comparison between these five helps to understand the importance of logic an
 # https://www.youtube.com/watch?v=xOayymoIl8U
   
 ## Offline Algorithm:
+ 
+- 1.1) get building and a call 
+- 1.2) create a variable that will eventually will be the id of the allocated elevator for this call and call it chosen_elv 
+
+- 1.3)  create a variable that hold max int value and call it min_time
+- 2) call for delete_busy function to clear done calls time
+- 3)  assign into variable free_elv  the value from unbusy_elv function
+- 3.1) if  free_elv !=-1:
+		allocate  free_elv to this call
+		add to call for the free_elvr call list
+		add the finish time for this call to free_elv  busy_time list 
+- 4) else iif  free_elv == -1:
+- 4.1)loop on all elevators on the building
+- 4.2) create a variable temp
+temp = the difference between the last call the elevator handling to the time of the new call+ the time that will take to this elevator to complete this call
+- 4.3) if temp< min_time:
+		min_time =temp
+		chosen_elv = building.elevators[i]
+		
+
+- 5)after we finish the loop 
+- 5.1)allocate chosen_elv to this call
+add to call for the chosen_elvcall list
+add the finish time for this call to chosen_elv  busy_time list 
+
+ #done!#
+
+## functions explanations:
+- unbusy_elv:
+--->loop all over the elevators on the building
+--->if elevator don't have any calls that she work on chack the time to complete this call
+--->get the unbusy elevator  with the best time and return it index
+
+- time_for_call:
+this function calculate the time that will take to complete Elevator call
+by take all the stops the elevator need to to do and the distance she need to travel 
+and take consider of the elevator attributes
+- delete_busy:
+check if the new call time is bigger from the values of busy time for each elevator and if so delete them
+
 
 
 
