@@ -36,16 +36,16 @@ The comparison between these five helps to understand the importance of logic an
 ## Bibliography:
 
 
-1.https://cdmana.com/2021/02/20210202111024127g.html
+# 1.https://cdmana.com/2021/02/20210202111024127g.html
 
-2.https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/
+# 2.https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/
 
-3.https://nanopdf.com/download/comparative-study-of-on-line-algorithms-for-the-elevator-scheduling_pdf
+# 3.https://nanopdf.com/download/comparative-study-of-on-line-algorithms-for-the-elevator-scheduling_pdf
 
-4.https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/8_4_12_Robal.pdf 
+# 4.https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/8_4_12_Robal.pdf 
 
-A short video that clearly illustrates the problem:
-https://www.youtube.com/watch?v=xOayymoIl8U
+- A short video that clearly illustrates the problem:
+# https://www.youtube.com/watch?v=xOayymoIl8U
   
 ## Offline Algorithm:
 
