@@ -1,4 +1,5 @@
-# Ex1                                     id: 206316895,318786506
+# Ex1                                    
+# ID: 206316895,318786506
 ## Description:
 
 When we come to analyze the problem of the optimal way to use an elevator in a building- we’re having  problems, for example:
