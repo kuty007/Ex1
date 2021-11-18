@@ -1,0 +1,58 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Building{
+min_floor : int
+max_floor : int
+elvators : list[Elevators]
+load_json_build()
+__init__()
+}
+class Callas{
+call_num:string
+time:float
+src_floor:int
+dst_floor:int
+stat:int
+elv_id:int
++load_csv_calls()
++_init__()
+}
+
+class Ex1{
++output()
+}
+class Elevators{
+id:int
+speed :float
+min_floor : int
+max_floor : int
+close_time :float
+open_time : float
+start_time : float
+stop_time :float
+calls_for_elv : list[Callas]
+time_busy : list [float]
++__init__()
++__repr__()
+}
+
+class main{
++time_for_call()
++unbusy_elv()
++add_time_busy()
++delete_busy()
++allocate()
+}
+Elevators --|> Building
+Callas --|> main
+Building --|> main
+Elevators --|> main
+main --|> Ex1
+
+
+
+
+
+
+@enduml
