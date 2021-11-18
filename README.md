@@ -17,6 +17,8 @@ Will the same strategy work effectively in a 10 floors and 100 floors building o
 
 We have come across a number of articles that have lightened our eyes in every form of approach to the problem and its importance to other areas of our lives.
 
+![Add a heading (2)](https://user-images.githubusercontent.com/93159965/142402726-aff88a2a-b157-4b99-97b2-f37270e0a468.png)
+
 Article number 1. is actually an article that presents the complexity of the possible way of thinking and looking at the importance of time algorithms, and the differences between them.
 There are two more- SCAN and LOOK algorithms.
 The algorithms work similarly but LOOK is slightly better. SCAN goes in one direction and handles all the calls that are in that direction until it reaches the end and then goes back to the other side and handles all the calls in the other direction. LOOK is more efficient, if he has no more calls in the direction he is going then he changes direction and handles the calls in the other direction.
