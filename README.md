@@ -4,7 +4,7 @@
 # ID: 206316895,318786506
 ## Description:
 
-When we come to analyze the problem of the optimal way to use an elevator in a building- we’re having  problems, for example:
+When we come to analyze the problem of the optimal way to use an elevator in a building- we encounter a number of  problems, for example:
   Are all the calls known to us in advance or do we receive a live stream of calls (offline VS online)?
  
   
