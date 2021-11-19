@@ -1,7 +1,7 @@
 # Ex1     
 ![Add a heading](https://user-images.githubusercontent.com/93159965/142401078-a0e123fc-2079-425a-9c84-d065401279c1.png)
                            
-# ID: 206316895,318786506
+# Eitan Wechsler & Asaf Yekutiel
 ## Description:
 
 When we come to analyze the problem of the optimal way to use an elevator in a building- we encounter a number of  problems, for example:
@@ -38,16 +38,16 @@ The comparison between these five helps to understand the importance of logic an
 ## Bibliography:
 
 
-# 1.https://cdmana.com/2021/02/20210202111024127g.html
+### 1.https://cdmana.com/2021/02/20210202111024127g.html
 
-# 2.https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/
+### 2.https://www.popularmechanics.com/technology/infrastructure/a20986/the-hidden-science-of-elevators/
 
-# 3.https://nanopdf.com/download/comparative-study-of-on-line-algorithms-for-the-elevator-scheduling_pdf
+### 3.https://nanopdf.com/download/comparative-study-of-on-line-algorithms-for-the-elevator-scheduling_pdf
 
-# 4.https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/8_4_12_Robal.pdf 
+### 4.https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/8_4_12_Robal.pdf 
 
 - A short video that clearly illustrates the problem:
-# https://www.youtube.com/watch?v=xOayymoIl8U
+### https://www.youtube.com/watch?v=xOayymoIl8U
   
 ## Offline Algorithm:
  
@@ -55,25 +55,37 @@ The comparison between these five helps to understand the importance of logic an
 - 1.2) create a variable that will eventually will be the id of the allocated elevator for this call and call it chosen_elv 
 
 - 1.3)  create a variable that hold max int value and call it min_time
-- 2) call for delete_busy function to clear done calls time
-- 3)  assign into variable free_elv  the value from unbusy_elv function
-- 3.1) if  free_elv !=-1:
+
+
+- 2.1) call for delete_busy function to clear done calls time
+
+
+- 3.1)  assign into variable free_elv  the value from unbusy_elv function
+- 3.2) if  free_elv !=-1:
+
 		allocate  free_elv to this call
 		add to call for the free_elvr call list
 		add the finish time for this call to free_elv  busy_time list 
-- 4) else iif  free_elv == -1:
-- 4.1)loop on all elevators on the building
-- 4.2) create a variable temp
+		
+- 4.1) else if  free_elv == -1:
+- 4.2)loop on all elevators on the building
+- 4.3) create a variable temp
+
+
 temp = the difference between the last call the elevator handling to the time of the new call+ the time that will take to this elevator to complete this call
-- 4.3) if temp< min_time:
+
+- 4.4) if temp< min_time:
+
+
 		min_time =temp
 		chosen_elv = building.elevators[i]
 		
 
-- 5)after we finish the loop 
-- 5.1)allocate chosen_elv to this call
+- 5.1)after we finish the loop 
+- 5.2)allocate chosen_elv to this call
 add to call for the chosen_elvcall list
 add the finish time for this call to chosen_elv  busy_time list 
+- 6.1)repeat for all calls
 
  #done!#
 
