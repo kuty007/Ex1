@@ -77,6 +77,7 @@ and if not check which elevator is the closest to finish her calls ans send her
 
 
 def allocate(build=Building, call=Callas):
+    num_of_elv = len(build.elvators)
     chosen_elv = -1
     min_time = 9223372036854775807
     delete_busy(build, call)
@@ -86,8 +87,19 @@ def allocate(build=Building, call=Callas):
         build.elvators[free_elev].calls_for_elv.append(call)
         add_time_busy(build.elvators[free_elev], call, 0)
         return free_elev
+    elif free_elev == -1 and num_of_elv <= 2:
+        for r in range(num_of_elv):
+            temp = abs(build.elvators[r].time_busy[-1] - float(call.time))
+            if temp < min_time:
+                min_time = temp
+                chosen_elv = r
+        call.elv_id = chosen_elv
+        build.elvators[chosen_elv].calls_for_elv.append(call)
+        add_time_busy(build.elvators[chosen_elv], call, min_time)
+        build.elvators[chosen_elv].time_busy = sorted(build.elvators[chosen_elv].time_busy)
+
     else:
-        for r in range(len(build.elvators)):
+        for r in range(num_of_elv):
             temp = abs(build.elvators[r].time_busy[-1] - float(call.time) + time_for_call(build.elvators[r], call))
             if temp < min_time:
                 min_time = temp
