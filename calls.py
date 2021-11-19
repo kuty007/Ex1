@@ -1,5 +1,6 @@
 import csv
 import pandas as pd
+import enum
 
 
 def load_csv_calls(file):
@@ -7,8 +8,8 @@ def load_csv_calls(file):
     with open(file) as f:
         calls_data = csv.reader(f)
         for row in calls_data:
-            call = Callas(call_num=row[0], time=row[1], src_floor=row[2]
-                          , dst_floor=row[3], state=row[4], elv_id=row[5])
+            call = Callas(call_num=row[0], time=float(row[1]), src_floor=int(row[2])
+                          , dst_floor=int(row[3]), state=row[4], elv_id=row[5])
             calls_list.append(call)
     return calls_list
 
