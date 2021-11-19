@@ -24,4 +24,3 @@ if len(inp) > 3:
     b_path, i_path, o_path = inp[1], inp[2], inp[3]
 output(b_path, i_path, o_path)
 
-output("B3.json", "Calls_a.csv", "output.csv")
