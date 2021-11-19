@@ -26,7 +26,7 @@ def time_for_call(elv=Elevators, call=Callas):
 
 """
 unbusy_elv
-this function  check if there is free elevators  in if so send the free elevator that will
+this function  check if there is free elevators  and if so send the free elevator that will
 complete the new call the fastest
 """
 
